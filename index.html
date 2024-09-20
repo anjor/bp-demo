@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solana Signature to CID Converter</title>
+    <title>ZK Storage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,18 +16,18 @@
     <div class="content-wrapper">
         <header class="header-images">
             <img src="img/zk-pb-1.png" alt="Header Image 1" class="header-image">
-            <h3 class="powered-by">Powered by</h3>
+            <h3 id="powered-by" class="powered-by">Powered by</h3>
             <img src="img/zk-pb-2.png" alt="Header Image 2" class="header-image">
         </header>
 
-        <main>
+        <main role="main">
             <section class="section">
                 <h1>Experience Off-Chain Decentralization in Action</h1>
                 <p>Interact directly with Solana's ledger data stored and secured using Filecoin's content addressing. Test reading and writing data in real-time.</p>
             </section>
 
             <section id="built-by" class="section">
-                <h3>Built by</h3>
+                <h3 id="powered-by" class="powered-by">Built by</h3>
                 <div class="logo-container">
                     <img src="img/logo1.png" alt="Logo 1" class="partner-logo">
                     <img src="img/logo2.png" alt="Logo 2" class="partner-logo">
@@ -41,7 +43,7 @@
                     <li>Click the "Request temporary access to the demo server" button on that page.</li>
                     <li>Return to this page and try your conversion again.</li>
                 </ol>
-                <button id="corsEnabled">I've enabled CORS access</button>
+                <button id="enableCorsButton">I've enabled CORS access</button>
             </section>
 
             <section id="converterSection" class="section hidden">
@@ -51,8 +53,53 @@
                 <button id="convertButton">Convert</button>
                 <div id="result"></div>
             </section>
+
+            <section id="features" class="section">
+                <h2>Next-Gen Decentralized Storage for dApps</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <h3>Cost Efficiency</h3>
+                        <p>Leverage Filecoin's low-cost storage solution to reduce dApp maintenance costs.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Decentralization</h3>
+                        <p>Trustless, decentralized storage ensures data remains available without relying on centralized entities.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Interoperability</h3>
+                        <p>Designed to work seamlessly with Solana and other blockchains.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Security with ZK Proofs</h3>
+                        <p>Ensure private and secure storage with Zero-Knowledge proof technology.</p>
+                    </div>
+                </div>
+            </section>
         </main>
     </div>
+
+    <footer>
+        <div class="footer-content">
+            <h2>ZK Storage</h2>
+            <div class="social-icons">
+                <a href="#" class="icon-link"><i class="fab fa-x-twitter"></i></a>
+                <a href="#" class="icon-link"><i class="fab fa-discord"></i></a>
+                <a href="#" class="icon-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="icon-link"><i class="fab fa-telegram-plane"></i></a>
+            </div>
+
+
+            <nav>
+                <a href="#">Documentation</a>
+                <a href="#">Pricing</a>
+                <a href="#">Tutorials</a>
+                <a href="#">API Reference</a>
+                <a href="#">GitHub</a>
+                <a href="#">Community</a>
+            </nav>
+            <p>Content on this site is licensed under a Creative Commons Attribution 4.0 International license.</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
