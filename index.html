@@ -67,6 +67,50 @@
                 <button id="convertButton">Convert</button>
                 <div id="result"></div>
             </section>
+
+        <script>
+            function hideCorsInstructions() {
+                document
+                    .getElementById("corsInstructions")
+                    .classList.add("hidden");
+                document
+                    .getElementById("converterSection")
+                    .classList.remove("hidden");
+            }
+            async function convertToCID() {
+                const signature =
+                    document.getElementById("signatureInput").value;
+                const resultDiv = document.getElementById("result");
+                if (!signature) {
+                    resultDiv.innerHTML = "Please enter a Solana signature.";
+                    return;
+                }
+                const corsProxyUrl = "https://cors-anywhere.herokuapp.com/";
+                const apiUrl = `http://37.27.135.247/api/v1/sig-to-cid/${signature}`;
+                try {
+                    const response = await axios.get(corsProxyUrl + apiUrl, {
+                        headers: {
+                            "X-Requested-With": "XMLHttpRequest",
+                        },
+                    });
+                    resultDiv.innerHTML = `CID: ${response.data}`;
+                } catch (error) {
+                    if (error.response && error.response.status === 403) {
+                        resultDiv.innerHTML =
+                            "Error: CORS access not enabled. Please follow the instructions at the top of the page.";
+                        document
+                            .getElementById("corsInstructions")
+                            .classList.remove("hidden");
+                        document
+                            .getElementById("converterSection")
+                            .classList.add("hidden");
+                    } else {
+                        resultDiv.innerHTML = `Error: ${error.message}`;
+                    }
+                }
+            }
+        </script>
+            
             <div id="sdks-libraries" class="section section-dark">
   <h1 class="section-title">Build Efficiently on Solana, Store Smarter with Filecoin.</h1>
   
