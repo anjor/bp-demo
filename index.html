@@ -1,109 +1,57 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Solana Signature to CID Converter</title>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-        <link rel="stylesheet" href="styles.css">
-        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
-    </head>
-    <body>
-    <header>
-        <img src="img/header.webp" alt="Header Image" id="header-image">
-    </header>
-    <h1>Experience Off-Chain Decentralization in Action</h1>
-        <p>Interact directly with Solana's ledger data stored and secured using Filecoin's content addressing. Test reading and writing data in real-time.</p>
-    <section id="built-by">
-        <h1>Built by:</h1>
-        <div class="logo-container">
-            <img src="img/logo1.png" alt="Logo 1" class="partner-logo">
-            <img src="img/logo2.png" alt="Logo 2" class="partner-logo">
-            <img src="img/logo3.png" alt="Logo 3" class="partner-logo">
-            <!-- Add more logo images as needed -->
-        </div>
-</section>
-        <div id="corsInstructions">
-        <h1>Solana Signature to CID Converter</h1>
-            <h2>Important: Enable CORS Access</h2>
-            <p>Before using this tool, you need to enable CORS access:</p>
-            <ol>
-                <li>
-                    Click
-                    <a
-                        href="https://cors-anywhere.herokuapp.com/corsdemo"
-                        target="_blank"
-                        >here</a
-                    >
-                    to open the CORS Anywhere demo page.
-                </li>
-                <li>
-                    Click the "Request temporary access to the demo server"
-                    button on that page.
-                </li>
-                <li>Return to this page and try your conversion again.</li>
-            </ol>
-            <button onclick="hideCorsInstructions()">
-                I've enabled CORS access
-            </button>
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solana Signature to CID Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="bg-wrapper">
+        <img src="img/bg.webp" alt="Abstract Background" class="bg-image">
+    </div>
 
-        <div id="converterSection" class="hidden">
-            <p>Enter a Solana signature to get its corresponding CID:</p>
-            <input
-                type="text"
-                id="signatureInput"
-                placeholder="Enter Solana signature"
-            />
-            <button onclick="convertToCID()">Convert</button>
-            <div id="result"></div>
-        </div>
+    <div class="content-wrapper">
+        <header>
+            <img src="img/header.webp" alt="Header Image" id="header-image">
+        </header>
 
-        <script>
-            function hideCorsInstructions() {
-                document
-                    .getElementById("corsInstructions")
-                    .classList.add("hidden");
-                document
-                    .getElementById("converterSection")
-                    .classList.remove("hidden");
-            }
+        <main>
+            <section class="section">
+                <h1>Experience Off-Chain Decentralization in Action</h1>
+                <p>Interact directly with Solana's ledger data stored and secured using Filecoin's content addressing. Test reading and writing data in real-time.</p>
+            </section>
 
-            async function convertToCID() {
-                const signature =
-                    document.getElementById("signatureInput").value;
-                const resultDiv = document.getElementById("result");
+            <section id="built-by" class="section">
+                <h2>Built by:</h2>
+                <div class="logo-container">
+                    <img src="img/logo1.png" alt="Logo 1" class="partner-logo">
+                    <img src="img/logo2.png" alt="Logo 2" class="partner-logo">
+                </div>
+            </section>
 
-                if (!signature) {
-                    resultDiv.innerHTML = "Please enter a Solana signature.";
-                    return;
-                }
+            <section id="corsInstructions" class="section">
+                <h2>Solana Signature to CID Converter</h2>
+                <h3>Important: Enable CORS Access</h3>
+                <p>Before using this tool, you need to enable CORS access:</p>
+                <ol>
+                    <li>Click <a href="https://cors-anywhere.herokuapp.com/corsdemo" target="_blank">here</a> to open the CORS Anywhere demo page.</li>
+                    <li>Click the "Request temporary access to the demo server" button on that page.</li>
+                    <li>Return to this page and try your conversion again.</li>
+                </ol>
+                <button id="corsEnabled">I've enabled CORS access</button>
+            </section>
 
-                const corsProxyUrl = "https://cors-anywhere.herokuapp.com/";
-                const apiUrl = `http://37.27.135.247/api/v1/sig-to-cid/${signature}`;
+            <section id="converterSection" class="section hidden">
+                <h2>Convert Solana Signature to CID</h2>
+                <p>Enter a Solana signature to get its corresponding CID:</p>
+                <input type="text" id="signatureInput" placeholder="Enter Solana signature">
+                <button id="convertButton">Convert</button>
+                <div id="result"></div>
+            </section>
+        </main>
+    </div>
 
-                try {
-                    const response = await axios.get(corsProxyUrl + apiUrl, {
-                        headers: {
-                            "X-Requested-With": "XMLHttpRequest",
-                        },
-                    });
-                    resultDiv.innerHTML = `CID: ${response.data}`;
-                } catch (error) {
-                    if (error.response && error.response.status === 403) {
-                        resultDiv.innerHTML =
-                            "Error: CORS access not enabled. Please follow the instructions at the top of the page.";
-                        document
-                            .getElementById("corsInstructions")
-                            .classList.remove("hidden");
-                        document
-                            .getElementById("converterSection")
-                            .classList.add("hidden");
-                    } else {
-                        resultDiv.innerHTML = `Error: ${error.message}`;
-                    }
-                }
-            }
-        </script>
-    </body>
+    <script src="script.js"></script>
+</body>
 </html>
