@@ -58,6 +58,44 @@ body {
     margin: 0 auto;
 }
 
+/* Updated Header images styles */
+.header-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.header-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.powered-by {
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.25rem;
+    margin: 0.5rem 0;
+}
+
+.powered-by-logos {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.powered-by-logos .header-image {
+    max-width: 300px;
+}
+
+.ampersand {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
 /* Typography */
 h1 {
     font-size: 2.441rem;
