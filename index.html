@@ -57,14 +57,14 @@
                     <li>Click the "Request temporary access to the demo server" button on that page.</li>
                     <li>Return to this page and try your conversion again.</li>
                 </ol>
-                <button id="enableCorsButton">I've enabled CORS access</button>
+                <button id="enableCorsButton" onclick="hideCorsInstructions()">I've enabled CORS access</button>
             </section>
 
             <section id="converterSection" class="section hidden">
                 <h2>Convert Solana Signature to CID</h2>
                 <p>Enter a Solana signature to get its corresponding CID:</p>
                 <input type="text" id="signatureInput" placeholder="Enter Solana signature">
-                <button id="convertButton">Convert</button>
+                <button id="convertButton" onclick="convertToCID()">Convert</button>
                 <div id="result"></div>
             </section>
         <script>
