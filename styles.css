@@ -22,6 +22,27 @@ h2 {
     margin-top: 20px;
 }
 
+/* New styles for header and image */
+header {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#header-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Adjust main heading to account for header image */
+h1 {
+    color: #ffffff;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
 /* Styles for main content sections */
 #intro, #corsInstructions, #converterSection {
     background-color: #1e1e1e;
