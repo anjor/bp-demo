@@ -1,72 +1,87 @@
 /* General body styles */
 body {
-    font-family: Arial, sans-serif; /* Use a clean, sans-serif font */
-    line-height: 1.6; /* Improve readability with increased line height */
-    color: #333; /* Dark gray text for good contrast */
-    max-width: 800px; /* Limit width for better readability on large screens */
-    margin: 0 auto; /* Center the content on the page */
-    padding: 20px; /* Add some space around the content */
-    background-color: #f4f4f4; /* Light gray background */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #e0e0e0;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #121212;
 }
 
 /* Main heading styles */
 h1 {
-    color: #4a4a4a; /* Slightly darker than the body text for emphasis */
-    text-align: center; /* Center the main heading */
-    margin-bottom: 30px; /* Add space below the heading */
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 /* Subheading styles */
 h2 {
-    color: #2c3e50; /* Dark blue-gray for subheadings */
-    margin-top: 20px; /* Add space above subheadings */
+    color: #bb86fc;
+    margin-top: 20px;
 }
 
 /* Styles for main content sections */
-#corsInstructions, #converterSection {
-    background-color: white; /* White background for content areas */
-    border-radius: 8px; /* Rounded corners */
-    padding: 20px; /* Inner spacing */
-    margin-bottom: 20px; /* Space between sections */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+#intro, #corsInstructions, #converterSection {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(255,255,255,0.1);
+}
+
+/* Intro section specific styles */
+#intro h2 {
+    color: #03dac6; /* Teal color for intro heading */
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+#intro p {
+    font-size: 1.1em;
+    line-height: 1.8;
 }
 
 /* Style the ordered list in CORS instructions */
 #corsInstructions ol {
-    padding-left: 20px; /* Add some indentation to the list */
+    padding-left: 20px;
 }
 
 /* Style the input field */
 input[type="text"] {
-    width: 100%; /* Full width input */
-    padding: 10px; /* Comfortable inner spacing */
-    margin-bottom: 10px; /* Space below the input */
-    border: 1px solid #ddd; /* Light gray border */
-    border-radius: 4px; /* Slightly rounded corners */
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #2c2c2c;
+    color: #e0e0e0;
 }
 
 /* Button styles */
 button {
-    background-color: #3498db; /* Blue background */
-    color: white; /* White text */
-    border: none; /* Remove default border */
-    padding: 10px 20px; /* Comfortable clickable area */
-    border-radius: 4px; /* Rounded corners */
-    cursor: pointer; /* Hand cursor on hover */
-    transition: background-color 0.3s ease; /* Smooth color transition on hover */
+    background-color: #03dac6;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 /* Button hover effect */
 button:hover {
-    background-color: #2980b9; /* Darker blue on hover */
+    background-color: #018786;
 }
 
 /* Styles for the result display area */
 #result {
-    margin-top: 20px; /* Space above the result */
-    padding: 10px; /* Inner spacing */
-    background-color: #e8f4fd; /* Light blue background */
-    border-radius: 4px; /* Rounded corners */
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #2c2c2c;
+    border-radius: 4px;
+    border: 1px solid #444;
 }
 
 /* Utility class to hide elements */
@@ -76,11 +91,17 @@ button:hover {
 
 /* Link styles */
 a {
-    color: #3498db; /* Blue color for links */
-    text-decoration: none; /* Remove underline */
+    color: #bb86fc;
+    text-decoration: none;
 }
 
 /* Link hover effect */
 a:hover {
-    text-decoration: underline; /* Add underline on hover */
+    text-decoration: underline;
+}
+
+/* Focus styles for better accessibility */
+input:focus, button:focus, a:focus {
+    outline: 2px solid #03dac6;
+    outline-offset: 2px;
 }
