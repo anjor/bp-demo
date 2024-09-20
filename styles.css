@@ -1,0 +1,86 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif; /* Use a clean, sans-serif font */
+    line-height: 1.6; /* Improve readability with increased line height */
+    color: #333; /* Dark gray text for good contrast */
+    max-width: 800px; /* Limit width for better readability on large screens */
+    margin: 0 auto; /* Center the content on the page */
+    padding: 20px; /* Add some space around the content */
+    background-color: #f4f4f4; /* Light gray background */
+}
+
+/* Main heading styles */
+h1 {
+    color: #4a4a4a; /* Slightly darker than the body text for emphasis */
+    text-align: center; /* Center the main heading */
+    margin-bottom: 30px; /* Add space below the heading */
+}
+
+/* Subheading styles */
+h2 {
+    color: #2c3e50; /* Dark blue-gray for subheadings */
+    margin-top: 20px; /* Add space above subheadings */
+}
+
+/* Styles for main content sections */
+#corsInstructions, #converterSection {
+    background-color: white; /* White background for content areas */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Inner spacing */
+    margin-bottom: 20px; /* Space between sections */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+/* Style the ordered list in CORS instructions */
+#corsInstructions ol {
+    padding-left: 20px; /* Add some indentation to the list */
+}
+
+/* Style the input field */
+input[type="text"] {
+    width: 100%; /* Full width input */
+    padding: 10px; /* Comfortable inner spacing */
+    margin-bottom: 10px; /* Space below the input */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 4px; /* Slightly rounded corners */
+}
+
+/* Button styles */
+button {
+    background-color: #3498db; /* Blue background */
+    color: white; /* White text */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Comfortable clickable area */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Hand cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth color transition on hover */
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* Styles for the result display area */
+#result {
+    margin-top: 20px; /* Space above the result */
+    padding: 10px; /* Inner spacing */
+    background-color: #e8f4fd; /* Light blue background */
+    border-radius: 4px; /* Rounded corners */
+}
+
+/* Utility class to hide elements */
+.hidden {
+    display: none;
+}
+
+/* Link styles */
+a {
+    color: #3498db; /* Blue color for links */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Link hover effect */
+a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
