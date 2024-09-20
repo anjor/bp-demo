@@ -41,6 +41,23 @@ body {
     padding: 40px 20px;
 }
 
+/* Header images */
+.header-images {
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+    margin-bottom: 1rem;
+}
+
+.header-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 0 auto;
+}
+
 /* Typography */
 h1 {
     font-size: 2.441rem;
@@ -62,22 +79,21 @@ h1, h2 {
     font-weight: 700;
     line-height: 1.2;
 }
-
-/* Header image */
-#header-image {
-    width: 100%;
-    max-height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 3rem;
+.powered-by {
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.25rem;
 }
-
 /* Main content sections */
-.section, #corsInstructions, #converterSection, #built-by {
-    background-color: rgba(30, 30, 30, 0.8);
+.section {
     border-radius: 12px;
     padding: 2rem;
     margin-bottom: 4rem;
+}
+
+/* Specific styles for sections with background */
+#corsInstructions, #converterSection {
+    background-color: rgba(30, 30, 30, 0.8);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
 }
@@ -193,7 +209,7 @@ input:focus, button:focus, a:focus {
         font-size: 1.5rem;
     }
 
-    .section, #corsInstructions, #converterSection, #built-by {
+    .section, #corsInstructions, #converterSection {
         padding: 1.5rem;
         margin-bottom: 3rem;
     }
@@ -205,5 +221,9 @@ input:focus, button:focus, a:focus {
     
     .partner-logo {
         max-width: 160px;
+    }
+
+    .header-image {
+        max-width: 100%;
     }
 }
