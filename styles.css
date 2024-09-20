@@ -1,31 +1,52 @@
-/* General body styles */
+/* Base font size and line height */
+html {
+    font-size: 16px;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Manrope', sans-serif;
     line-height: 1.6;
     color: #e0e0e0;
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
     background-color: #121212;
+    font-size: 1rem; /* 16px */
 }
 
-/* Main heading styles */
+/* Adjusted typographic scale */
 h1 {
+    font-size: 1.953rem; /* 40px */
     color: #ffffff;
     text-align: center;
-    margin-bottom: 30px;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
 }
 
-/* Subheading styles */
-h2 {
+h2, h3 {
+    font-size: 1.25rem; /* 28px */
     color: #bb86fc;
-    margin-top: 20px;
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 
-/* New styles for header and image */
+h4, h5, h6 {
+    font-size: 1.25rem; /* 20px */
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+}
+
+/* Heading styles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Header styles */
 header {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
 
 #header-image {
@@ -35,45 +56,63 @@ header {
     border-radius: 8px;
 }
 
-/* Adjust main heading to account for header image */
-h1 {
-    color: #ffffff;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 30px;
-}
-
 /* Styles for main content sections */
-#intro, #corsInstructions, #converterSection {
+#intro, #corsInstructions, #converterSection, #built-by {
     background-color: #1e1e1e;
     border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 1.5rem;
+    margin-bottom: 5rem;
     box-shadow: 0 2px 4px rgba(255,255,255,0.1);
 }
 
 /* Intro section specific styles */
 #intro h2 {
-    color: #03dac6; /* Teal color for intro heading */
-    font-size: 1.5em;
-    margin-bottom: 15px;
+    color: #03dac6;
 }
 
 #intro p {
-    font-size: 1.1em;
-    line-height: 1.8;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Styles for the "Built by:" section */
+#built-by {
+    text-align: center;
+}
+
+#built-by h2 {
+    color: #03dac6;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+}
+
+.partner-logo {
+    max-width: 200px;
+    max-height: 100px;
+    object-fit: contain;
 }
 
 /* Style the ordered list in CORS instructions */
 #corsInstructions ol {
-    padding-left: 20px;
+    padding-left: 1.25rem;
+    margin-bottom: 0;
 }
 
 /* Style the input field */
 input[type="text"] {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1rem;
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
     border: 1px solid #555;
     border-radius: 4px;
     background-color: #2c2c2c;
@@ -82,10 +121,13 @@ input[type="text"] {
 
 /* Button styles */
 button {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
     background-color: #03dac6;
     color: #000000;
     border: none;
-    padding: 10px 20px;
+    padding: 0.75rem 1.25rem;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -98,11 +140,12 @@ button:hover {
 
 /* Styles for the result display area */
 #result {
-    margin-top: 20px;
-    padding: 10px;
+    margin-top: 1.25rem;
+    padding: 0.75rem;
     background-color: #2c2c2c;
     border-radius: 4px;
     border: 1px solid #444;
+    font-size: 0.9rem; /* 14.4px */
 }
 
 /* Utility class to hide elements */
@@ -125,4 +168,31 @@ a:hover {
 input:focus, button:focus, a:focus {
     outline: 2px solid #03dac6;
     outline-offset: 2px;
+}
+
+/* Adjust spacing for mobile devices */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px; /* Slightly smaller base font size for mobile */
+    }
+
+    h1 {
+        font-size: 2rem; /* 30px at 15px base */
+    }
+
+    h2, h3 {
+        font-size: 1.5rem; /* 22.5px at 15px base */
+    }
+
+    h4, h5, h6 {
+        font-size: 1.2rem; /* 18px at 15px base */
+    }
+
+    .logo-container {
+        flex-direction: column;
+    }
+    
+    .partner-logo {
+        margin-bottom: 0.75rem;
+    }
 }
